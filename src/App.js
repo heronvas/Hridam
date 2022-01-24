@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import logos from './0011.jpg';
-import hospital from './hospital.jpg';
+//hospital
+import hospital from './stethos1.jpg';
 import hridham from './hridamblack.png';
 import hridhamW from './navicon.jpg';
 import product from './product.png';
@@ -89,10 +90,13 @@ const useStyles = makeStyles((theme) => ({
     color:"#FFFFFF"
   },
   aboutimg:{
-    backgroundImage: `url(${hospital})`,
+    //backgroundImage: `url(${hospital})`,
     //width: "3000px",
+    //backgroundRepeat:"no-repeat",
+    //height:"100%",
     flex: 1
   },
+  
   footer:{
     width: "100%",
     height:"100%",
@@ -229,7 +233,7 @@ which would ultimately facilitate the common man to exercise their human
 fundamental right of "Healthcare for all"</p>
         </Box>
         <Box className={classes.aboutimg}>
-            
+        <img src={hospital} className={classes.productImg}></img>
         </Box>
       </Box>
       <Box id='product' className={classes.productContainer}>
@@ -341,7 +345,7 @@ fundamental right of "Healthcare for all"</p>
 
       <Box className={classes.prodCompContainer}>
 
-      <h1 className={classes.compareHead}>Why Moscope stands tall?</h1>
+      <h1 className={classes.compareHead}>Why Moscope is better?</h1>
       <img src={prodComps} className={classes.prodCompImg}></img>
 
     </Box>
