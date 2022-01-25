@@ -32,11 +32,11 @@ const useStyles = makeStyles({
     marginBottom: 12
   },
   symbol:{
-    width:"200px",
+    width:"100%",
     height:"200px",
     
 
-    paddingRight:"20px"
+    //paddingLeft:"5%"
   }
 });
 

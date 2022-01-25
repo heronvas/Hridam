@@ -101,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height:"100%",
     backgroundColor: "#1C1B17",
+    paddingBottom:"30px"
     //display:"flex",
     
 
@@ -177,6 +178,7 @@ const useStyles = makeStyles((theme) => ({
   },
   teamContainer:{
       //marginTop:"10px",
+      marginLeft:"40px",
       marginBottom:"30px",
       
   },
@@ -233,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
     },
     socialMedia:{
       marginTop:"70px",
-      marginLeft:"7%",
+      marginLeft:"43%",
   }
 
 
@@ -471,11 +473,7 @@ and thereby creating value for all stakeholders.</p>
                             </li>
                         </ul></Box>
                 </Box>
-                <Box className={classes.socialMedia}>
-                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} class="fa fa-facebook-square"></i></a></span>
-                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"30px"}}><i style={{"fontSize":"50px"}} class="fa fa-instagram"></i></a></span>
-                    
-                </Box>
+                
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
       <Box className={classes.footerHalf2}>
@@ -497,6 +495,11 @@ and thereby creating value for all stakeholders.</p>
       </Grid>
       
     </Grid>
+    <Box className={classes.socialMedia}>
+                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} class="fa fa-facebook-square"></i></a></span>
+                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"30px"}}><i style={{"fontSize":"50px"}} class="fa fa-instagram"></i></a></span>
+                    
+                </Box>
 
         
                 {/* <Box className={classes.footerHalf2}>
