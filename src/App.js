@@ -13,6 +13,7 @@ import hridhamW from './navicon.jpg';
 import product from './product.png';
 import prodComps from './prodComp.jpg';
 import phone from './icons/Phone1.jpg';
+import visions from './visions5.jpg';
 import heart from './icons/heart.jpeg';
 import rec from './icons/rec.jpeg';
 import battery from './icons/battery.jpeg';
@@ -37,6 +38,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -83,11 +85,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop:"60px"
     
   },
-  teamHead:{
-    fontSize:"40px",
-    textAlign:"center",
-    paddingTop:"30px"
-  },
+  
   head2:{
     color:"#FFFFFF"
   },
@@ -180,11 +178,62 @@ const useStyles = makeStyles((theme) => ({
   teamContainer:{
       //marginTop:"10px",
       marginBottom:"30px",
-      marginLeft:"5%"
+      
   },
-  socialMedia:{
-    marginTop:"70px",
-    marginLeft:"7%",
+  teamHead:{
+    fontSize:"30px",
+    textAlign:"center",
+    paddingTop:"30px",
+
+  //   backgroundColor: "rgb(0,0,0)", 
+  // backgroundColor: "rgba(0,0,0, 0.4)", 
+  // color: "white",
+  // fontWeight: "bold",
+  // border: "3px solid #f1f1f1",
+  // position: "absolute",
+  // top: "50%",
+  // left: "50%",
+  // transform: "translate(-50%, -50%)",
+  // zIndex: "2",
+  // width: "80%",
+  // padding: "20px",
+  // textAlign: "center",
+  // },
+  // socialMedia:{
+  //   marginTop:"70px",
+  //   marginLeft:"7%",
+  },
+  visionContainer:{
+    marginTop:"120px",
+    marginBottom:"160px",
+    background: `url(${visions}) no-repeat center fixed`,
+      backgroundSize: "cover",
+      filter:"blur(0px)",
+      //WebkitFilter:"blur(3px)",
+      boxSizing:"border-box",
+      //backgroundRepeat:"no-repeat",
+      width:"100%",
+      height:"300px"
+      //marginLeft:"5%"
+  },
+  visionHead:{
+    backgroundColor: "rgb(0,0,0)", 
+    backgroundColor: "rgba(0,0,0, 0.4)", 
+    color: "white",
+    fontWeight: "bold",
+    border: "3px solid #f1f1f1",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: "2",
+    width: "80%",
+    padding: "20px",
+    textAlign: "center",
+    },
+    socialMedia:{
+      marginTop:"70px",
+      marginLeft:"7%",
   }
 
 
@@ -244,6 +293,9 @@ fundamental right of "Healthcare for all"</p>
           <p>Change the way of using your stethoscope</p>
         </Box>
         <img src={product} className={classes.productImg}></img>
+        </Box>
+        <Box className={classes.productDesc}>
+          <p>Recording can be done even if the battery is completely discharged</p>
         </Box>
         {/* <Box className={classes.productDesc}>
           <p>It can record, store and play the recorded heart sounds.</p>
@@ -352,11 +404,17 @@ fundamental right of "Healthcare for all"</p>
 
     </Box>
 
-    <Box id='team' className = {classes.teamContainer}>
+    <Box id='team' className = {classes.visionContainer}>
 
-    <h1 className={classes.teamHead}>Meet the team</h1>
+    <Box className={classes.visionHead}>
+    <h1 >Vision</h1>
 
-    <Grid
+<p>To become the most respected medical enterprise which delivers high 
+quality and novel "Made in India" products at fair prices to the consumer 
+and thereby creating value for all stakeholders.</p>
+    </Box>
+    </Box>
+    {/* <Grid
     style={{"marginBottom":"90px",}}
       container
       spacing={4}
@@ -377,13 +435,11 @@ fundamental right of "Healthcare for all"</p>
       <Grid item xs={12} sm={6} md={4}>
         <Card name = {"Kedar Kishor Vaze"} desc = {"a graduate in Production Engineering has a keen interest in the field of Sales & Marketing, Brand Development and Supply Chain Management. He has been the Chief Financial Officer and Marketing head at a Formula Student racing team which competes on a national level. With 8 months of work experience in the field of Operations n Logistics in a FMCG company, he has also executed multiple project based solutions for Medium and Small Scale enterprises. Currently, Kedar is handling the Sales, Marketing and Brand development for Hridam Surgicals."} links = {"https://www.linkedin.com/in/kedar-vaze-672927143/"}/>
       </Grid>
-      {/* <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"arun"} desc = {""}/>
-      </Grid> */}
-    </Grid>
+      
+    </Grid> */}
 
 
-    </Box>
+    
 
       
 

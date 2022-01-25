@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
 // import ShoppingBasketRoundedIcon from '@material-ui/icons/ShoppingBasketRounded';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Login from './Login.jsx';
 //import {Link} from 'react-router-dom';
 
 
@@ -138,15 +139,21 @@ export default function Navbars(props) {
         
         <p>About</p>
       </MenuItem>
-      <MenuItem onClick={() => locateTeam()}>
-        
-        <p>Team &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      </MenuItem>
       <MenuItem onClick={() => locateProduct()}>
         
         <p>Product</p>
       </MenuItem>
-      {/* <MenuItem >
+      <MenuItem onClick={() => locateTeam()}>
+        
+        <p>Vision &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      </MenuItem>
+
+      <MenuItem onClick={() => openDialog()}>
+        
+        <p>Contact Us &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      </MenuItem>
+      
+      {/* <MenuItem >openDialog
         
         <p>Vision</p>
       </MenuItem> */}
@@ -166,8 +173,10 @@ export default function Navbars(props) {
         <div className={styles.container}>
         <div className={styles.sectionDesktop}>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>About</Button>
-        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateTeam()}>Team</Button>
-          <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateTeam()}>Vision</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => openDialog()}>Contact Us</Button>
+          
           {/* <Button color="inherit" style={{"color":"#000000"}}>Vision</Button> */}
           </div>
         </div>
@@ -186,7 +195,7 @@ export default function Navbars(props) {
         </ToolBar>
         {renderMobileMenu}
       {renderMenu}
-      
+      <Login open={open} setOpen={setOpen}/>
     </AppBar>
     
     
