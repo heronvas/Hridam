@@ -24,6 +24,8 @@ import './App.css';
 import Card from './SimpleCard';
 import ACard from './AttributeCard.jsx';
 import Navbars from './Navbars.jsx';
+import tandc from './tandc.pdf';
+import usermanual from './usermanual.pdf';
 import { Grid } from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -426,11 +428,11 @@ fundamental right of "Healthcare for all"</p>
                             
                             <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
                                 
-                                <a href="http://3.15.1.15:5000/tandc" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
+                                <a href={tandc} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
                             </li>
                             <li style={{"color": "#FFFFFF", "paddingTop":"30px"}}>
                                 
-                                <a href="http://3.15.1.15:5000/usermanual" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
+                                <a href={usermanual} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
                             </li>
                         </ul>
 
