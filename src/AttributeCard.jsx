@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 //import { shadows } from '@mui/system';
 import { Box } from '@material-ui/core';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const useStyles = makeStyles({
@@ -17,7 +19,7 @@ const useStyles = makeStyles({
     
     // boxShadow: "0px 5px"
     boxShadow: "0 10px 30px -12.125px rgba(0,0,0,0.3)",
-    height:"300px"
+    height:"100%"
   },
   bullet: {
     display: "inline-block",
@@ -44,6 +46,8 @@ export default function OutlinedCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+  
+
   return (
     <Card  className={classes.root} variant="outlined">
       <CardContent>
@@ -66,7 +70,20 @@ export default function OutlinedCard(props) {
         {props.attr}
           
         </Typography>
+
+        <Button style={{
+        borderRadius: 10,
+        backgroundColor: "#05C0C9",
+        //padding: "18px 36px",
+        fontSize: "14px",
+        marginTop:"20px",
+        marginLeft:"19.5%",
+        color:"#FFFFFF"
+    }} variant="contained"  onClick={()=> toast(props.tmsg)}>
+          Know More
+        </Button>
       </CardContent>
+      <ToastContainer />
       {/* <CardActions>
         <Button size="small">Learn More</Button>
       </CardActions> */}

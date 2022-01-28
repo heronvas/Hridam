@@ -91,6 +91,10 @@ export default function Navbars(props) {
     window.location.replace("/#team")
   }
 
+  const locateContact = () =>{
+    window.location.replace("/#contact")
+  }
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -148,7 +152,7 @@ export default function Navbars(props) {
         <p>Vision &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </MenuItem>
 
-      <MenuItem onClick={() => openDialog()}>
+      <MenuItem onClick={() => locateContact()}>
         
         <p>Contact Us &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </MenuItem>
@@ -175,7 +179,7 @@ export default function Navbars(props) {
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>About</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateTeam()}>Vision</Button>
-        <Button color="inherit" style={{"color":"#000000"}} onClick={() => openDialog()}>Contact Us</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateContact()}>Contact Us</Button>
           
           {/* <Button color="inherit" style={{"color":"#000000"}}>Vision</Button> */}
           </div>

@@ -25,6 +25,7 @@ import './App.css';
 import Card from './SimpleCard';
 import ACard from './AttributeCard.jsx';
 import Navbars from './Navbars.jsx';
+import Contact from './Contact.jsx';
 import tandc from './tandc.pdf';
 import usermanual from './usermanual.pdf';
 import { Grid } from "@material-ui/core";
@@ -53,8 +54,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ffff",
   },
   photo:{
-    marginTop:"60px",
-    width: "100%",
+    marginTop:"70px",
+    paddingLeft:"10%",
+    //paddingRight:"60px",
+    width: "80%",
     height: "100%"
     
   },
@@ -71,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:"20px",
     marginTop:"30px",
     marginRight:"20px",
+    
     flex: 1
     
 
@@ -80,14 +84,16 @@ const useStyles = makeStyles((theme) => ({
   },
   compareHead:{
     color:"#8DD7F7",
-    fontSize:"60px",
+    fontSize:"45px",
     textAlign:"center",
     paddingTop:"60px"
     
   },
   
   head2:{
-    color:"#FFFFFF"
+    color:"#FFFFFF",
+    
+    
   },
   aboutimg:{
     //backgroundImage: `url(${hospital})`,
@@ -141,14 +147,15 @@ const useStyles = makeStyles((theme) => ({
       
   },
   productImg:{
-    width:"100%",
-    height:"100%"
+    width:"91%",
+    height:"100%",
+    marginLeft:"9%"
   },
   productDesc:{
     
     textAlign:"center",
     marginLeft:"10%",
-    fontSize: "55px",
+    fontSize: "40px",
     fontWeight:"bold"
     
   },
@@ -234,8 +241,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     },
     socialMedia:{
-      marginTop:"70px",
-      marginLeft:"43%",
+      marginTop:"60px",
+      paddingLeft:"40px",
   }
 
 
@@ -252,7 +259,6 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   
-
   return (
     <div className="font-link">
       <div className={classes.root}>
@@ -296,9 +302,9 @@ fundamental right of "Healthcare for all"</p>
         </Box>
         <img src={product} className={classes.productImg}></img>
         </Box>
-        <Box className={classes.productDesc}>
+        {/* <Box className={classes.productDesc}>
           <p>Recording can be done even if the battery is completely discharged</p>
-        </Box>
+        </Box> */}
         {/* <Box className={classes.productDesc}>
           <p>It can record, store and play the recorded heart sounds.</p>
         </Box> */}
@@ -329,23 +335,23 @@ fundamental right of "Healthcare for all"</p>
       className={classes.gridContainer}
       justify="center"
     >
-      <Tooltip title="The app generates a phonocardiogram based on the recorded heart sounds for every file" arrow placement="right-start">
       <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={heart} attr={"Phonocardiogram"}/>
+        <ACard imgs={heart} 
+        attr={"Phonocardiogram"}
+        tmsg={"The app generates a phonocardiogram based on the recorded heart sounds for every file"}/>
       </Grid>
-      </Tooltip>
-
-      <Tooltip title="Fast Charging in 1 Hr 30 mins & Standby Battery Life of 18 Hrs in a Single Charge" arrow placement="right-start">
+      
       <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={battery} attr={"Long Battery Life"}/>
+        <ACard imgs={battery} 
+        attr={"Long Battery Life"}
+        tmsg={"Fast Charging in 1 Hr 30 mins & Standby Battery Life of 18 Hrs in a Single Charge"}/>
       </Grid>
-      </Tooltip>
-
-      <Tooltip title="This enables to auscultate from a safe distance Any headphones/Air Pods having Bluetooth technology can be connected with the device" arrow placement="left-start">
+      
       <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={earphone} attr={"Bluetooth Auscultation"}/>
+        <ACard imgs={earphone} 
+        attr={"Bluetooth Auscultation"}
+        tmsg={"This enables to auscultate from a safe distance Any headphones/Air Pods having Bluetooth technology can be connected with the device"}/>
       </Grid>
-      </Tooltip>
       
       {/* <Grid item xs={12} sm={6} md={4}>
         <Card name = {"arun"} desc = {""}/>
@@ -358,24 +364,24 @@ fundamental right of "Healthcare for all"</p>
       justify="center"
     >
 
-    <Tooltip title="It has a Denoise feature which cancels out all the unwanted noise in the recorded audio, therefore providing a clean sound of the heartbeats" arrow placement="left-start">
     <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={anc} attr={"Denoise feature"}/>
+        <ACard imgs={anc} 
+        attr={"Denoise feature"}
+        tmsg={"It has a Denoise feature which cancels out all the unwanted noise in the recorded audio, therefore providing a clean sound of the heartbeats"}/>
       </Grid>
-      </Tooltip>
-
-      <Tooltip title="It provides a guided recording of cardiac sounds from 4 locations and lungs sounds from 6 locations" arrow placement="left-start">
+    
       <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={body} attr={"Body Chart"}/>
+        <ACard imgs={body} 
+        attr={"Body Chart"}
+        tmsg={"It provides a guided recording of cardiac sounds from 4 locations and lungs sounds from 6 locations"}/>
       </Grid>
-      </Tooltip>
-
-      <Tooltip title="Record sounds with the app and share them with other doctors via Whatsapp/Email etc. for review" arrow placement="left-start">
+      
       <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={rec} attr={"Record and Share Sounds"}/>
+        <ACard imgs={rec} 
+        attr={"Record and Share Sounds"}
+        tmsg={"Record sounds with the app and share them with other doctors via Whatsapp/Email etc. for review"}/>
       </Grid>
-      </Tooltip>
-
+      
       
       
       
@@ -388,13 +394,12 @@ fundamental right of "Healthcare for all"</p>
     </Box>
 
     <Box id='product' className={classes.productContainer}>
-        <Box >
-        <img src={phone} style={{"width":"100%", "height":"100%", "marginLeft":"5%", "marginTop":"40px"}}></img>
-        </Box>
         <Box className={classes.productDesc}>
-          <p style={{"fontSize":"50px"}}>Seamless integration with the app</p>
+          <p style={{"fontSize":"45px", "marginTop":"70px"}}>Seamless integration with the app</p>
         </Box>
-        
+        <Box >
+        <img src={phone} style={{"width":"75%", "height":"60%", "marginLeft":"16%", "marginTop":"0px"}}></img>
+        </Box>
         
       </Box>
 
@@ -443,7 +448,9 @@ and thereby creating value for all stakeholders.</p>
 
     
 
-      
+      <Box id="contact" style={{"paddingLeft":"15%", "paddingRight":"15%"}}>
+        <Contact/>
+      </Box>
 
 
       <Box className={classes.footer}>
@@ -473,6 +480,11 @@ and thereby creating value for all stakeholders.</p>
                             </li>
                         </ul></Box>
                 </Box>
+                <Box className={classes.socialMedia}>
+                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} class="fa fa-facebook-square"></i></a></span>
+                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} class="fa fa-instagram"></i></a></span>
+                    
+                </Box>
                 
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
@@ -495,11 +507,7 @@ and thereby creating value for all stakeholders.</p>
       </Grid>
       
     </Grid>
-    <Box className={classes.socialMedia}>
-                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} class="fa fa-facebook-square"></i></a></span>
-                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"30px"}}><i style={{"fontSize":"50px"}} class="fa fa-instagram"></i></a></span>
-                    
-                </Box>
+    
 
         
                 {/* <Box className={classes.footerHalf2}>
