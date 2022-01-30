@@ -1,10 +1,10 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+// import IconButton from '@material-ui/core/IconButton';
 import logos from './0011.jpg';
 //hospital
 import hospital from './stethos1.jpg';
@@ -12,7 +12,8 @@ import hridham from './hridamblack.png';
 import hridhamW from './navicon.jpg';
 import product from './product.png';
 import prodComps from './prodComp.jpg';
-import phone from './icons/Phone1.jpg';
+import benifit from './benifit.jpg';
+import phone from './phones.png';
 import visions from './visions5.jpg';
 import heart from './icons/heart.jpeg';
 import rec from './icons/rec.jpeg';
@@ -119,8 +120,9 @@ const useStyles = makeStyles((theme) => ({
   footerLogo:{
     marginTop:"20px",
     marginLeft:"20px",
-    width:"300px",
-    height:"100px"
+    width:"60%",
+    height:"100px",
+    //objectFit:"cover"
   },
   footerDetails:{
     listStyleType: "none", 
@@ -243,6 +245,44 @@ const useStyles = makeStyles((theme) => ({
     socialMedia:{
       marginTop:"60px",
       paddingLeft:"40px",
+  },
+  benifitsContainer:{
+    width: "100%",
+    height: '650px',
+    backgroundColor: "#003D57",
+    display: "flex",
+    marginTop:"80px"
+  },
+  benifitsus:{
+    width:"50%",
+    height: '100%',
+    marginLeft:"20px",
+    marginTop:"30px",
+    marginRight:"20px",
+    
+    
+    flex: 1
+    
+
+  },
+  benifitsimg:{
+    //backgroundImage: `url(${hospital})`,
+    //width: "3000px",
+    //backgroundRepeat:"no-repeat",
+    //height:"100%",
+    flex: 1
+  },
+  stethoImg:{
+    width:"91%",
+    height:"100%",
+    //marginLeft:"9%"
+    
+  },
+  benifitHead:{
+    color:"#FFFFFF",
+    listStyleType:"none",
+    marginTop:"7%",
+    marginBottom:"20px"
   }
 
 
@@ -257,6 +297,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+  const myRef = useRef(null);
+  const productss = useRef(null);
+  const visionss = useRef(null);
+  const contactss = useRef(null);
+
 
   
   return (
@@ -275,11 +320,11 @@ export default function ButtonAppBar() {
           <Button color="inherit" className={classes.navButton}>Vision</Button>
         </Toolbar>
       </AppBar> */}
-      <Navbars img={hridhamW}/>
+      <Navbars img={hridhamW} about={myRef} product={productss} vision = {visionss} contactUs={contactss}/>
       <Box className={classes.photoContainer}> 
         <img src={logos} alt='' className={classes.photo}/>
       </Box>
-      <Box id='about' className = {classes.aboutContainer}>
+      <Box ref={myRef} className = {classes.aboutContainer}>
         <Box className={classes.aboutus}>
             <h2  className={classes.head1}>About Us</h2 >
             <p className={classes.head2}>Hridam surgicals is the product born from the teamwork of four aspiring 
@@ -295,7 +340,7 @@ fundamental right of "Healthcare for all"</p>
         <img src={hospital} className={classes.productImg}></img>
         </Box>
       </Box>
-      <Box id='product' className={classes.productContainer}>
+      <Box ref={productss} className={classes.productContainer}>
         <Box >
         <Box className={classes.productDesc}>
           <p>Change the way of using your stethoscope</p>
@@ -393,12 +438,28 @@ fundamental right of "Healthcare for all"</p>
 
     </Box>
 
-    <Box id='product' className={classes.productContainer}>
+    <Box  className = {classes.benifitsContainer}>
+    <Box className={classes.benifitsimg}>
+        <img src={benifit} className="stethimg"></img>
+        </Box>
+        <Box className={classes.benifitsus}>
+            <ul className={classes.benifitHead}>
+              <li>Recording can be done even if the battery in the device is completely discharged</li>
+              <li style={{"paddingTop":"30px"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
+              <li style={{"paddingTop":"30px"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
+              <li style={{"paddingTop":"30px"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
+            </ul>
+        </Box>
+        
+      </Box>
+
+
+    <Box  className={classes.productContainer}>
         <Box className={classes.productDesc}>
           <p style={{"fontSize":"45px", "marginTop":"70px"}}>Seamless integration with the app</p>
         </Box>
         <Box >
-        <img src={phone} style={{"width":"75%", "height":"60%", "marginLeft":"16%", "marginTop":"0px"}}></img>
+        <img src={phone} style={{"width":"30%", "height":"30%", "marginLeft":"40%", "marginTop":"0px"}}></img>
         </Box>
         
       </Box>
@@ -411,7 +472,7 @@ fundamental right of "Healthcare for all"</p>
 
     </Box>
 
-    <Box id='team' className = {classes.visionContainer}>
+    <Box ref={visionss} className = {classes.visionContainer}>
 
     <Box className={classes.visionHead}>
     <h1 >Vision</h1>
@@ -448,7 +509,7 @@ and thereby creating value for all stakeholders.</p>
 
     
 
-      <Box id="contact" style={{"paddingLeft":"15%", "paddingRight":"15%"}}>
+      <Box ref={contactss} style={{"paddingLeft":"15%", "paddingRight":"15%"}}>
         <Contact/>
       </Box>
 

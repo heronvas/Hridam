@@ -80,19 +80,20 @@ export default function Navbars(props) {
   }
 
   const locateAbout = () =>{
-    window.location.replace("/#about")
+    //window.location.replace("/#about")
+    window.scrollTo({behavior: 'smooth', top: props.about.current.offsetTop -70});
   }
 
   const locateProduct = () =>{
-    window.location.replace("/#product")
+    window.scrollTo({behavior: 'smooth', top: props.product.current.offsetTop -70});
   }
 
   const locateTeam = () =>{
-    window.location.replace("/#team")
+    window.scrollTo({behavior: 'smooth', top: props.vision.current.offsetTop -100});
   }
 
   const locateContact = () =>{
-    window.location.replace("/#contact")
+    window.scrollTo({behavior: 'smooth', top: props.contactUs.current.offsetTop -100});
   }
 
   const handleProfileMenuOpen = (event) => {

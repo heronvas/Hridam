@@ -28,7 +28,7 @@ const styling = makeStyles({
         height: "100%",
         width:"100%",
         //display: "flex",
-        boxShadow: "0 20px 70px -12.125px rgba(0,0,0,0.3)",
+        boxShadow: "0 20px 60px -12.125px rgba(0,0,0,0.3)",
         height:"100%",
         borderRadius:"20px",
         marginBottom:"150px",
@@ -158,7 +158,7 @@ export default function Contact() {
     
     return (
         <Card className={styless.component}>
-            <h1 style={{"textAlign":"center"}}>Please contact us for further queries</h1>
+            <h2 style={{"textAlign":"center", "marginLeft":"10px", "marginRight":"10px"}}>Please contact us for further queries</h2>
             <CardContent>
             
              
