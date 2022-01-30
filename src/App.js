@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft:"10%",
     //paddingRight:"60px",
     width: "80%",
-    height: "100%"
+    height: "100%",
     
   },
   photoContainer:{
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   },
   compareHead:{
     color:"#8DD7F7",
-    fontSize:"45px",
+    fontSize:"38px",
     textAlign:"center",
     paddingTop:"60px"
     
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height:"100%",
     backgroundColor: "#1C1B17",
-    paddingBottom:"30px"
+    paddingBottom:"10%"
     //display:"flex",
     
 
@@ -120,8 +120,8 @@ const useStyles = makeStyles((theme) => ({
   footerLogo:{
     marginTop:"20px",
     marginLeft:"20px",
-    width:"60%",
-    height:"100px",
+    width:"70%",
+    height:"130px",
     //objectFit:"cover"
   },
   footerDetails:{
@@ -157,7 +157,7 @@ const useStyles = makeStyles((theme) => ({
     
     textAlign:"center",
     marginLeft:"10%",
-    fontSize: "40px",
+    fontSize: "35px",
     fontWeight:"bold"
     
   },
@@ -456,7 +456,7 @@ fundamental right of "Healthcare for all"</p>
 
     <Box  className={classes.productContainer}>
         <Box className={classes.productDesc}>
-          <p style={{"fontSize":"45px", "marginTop":"70px"}}>Seamless integration with the app</p>
+          <p style={{"fontSize":"35px", "marginTop":"70px"}}>Seamless integration with the app</p>
         </Box>
         <Box >
         <img src={phone} style={{"width":"30%", "height":"30%", "marginLeft":"40%", "marginTop":"0px"}}></img>
