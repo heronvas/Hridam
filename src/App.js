@@ -155,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:"9%",
     objectFit:"cover"
   },
-  productImg1:{
+  productImg1:{   //about
     width:"71%",
     height:"100%",
     marginLeft:"29%",
@@ -333,6 +333,9 @@ export default function ButtonAppBar() {
         <img src={logos} alt='' className={classes.photo}/>
       </Box>
       <Box ref={myRef} className = {classes.aboutContainer}>
+      <Box className={classes.aboutimg}>
+        <img src={hospital} className="benContainer"></img>
+        </Box>
         <Box className={classes.aboutus}>
             <h2  className={classes.head1}>About Us</h2 >
             <p className={classes.head2}>Hridam surgicals is the product born from the teamwork of four aspiring 
@@ -344,9 +347,7 @@ We wish to explore and innovate many such medical devices in the future
 which would ultimately facilitate the common man to exercise their human 
 fundamental right of "Healthcare for all"</p>
         </Box>
-        <Box className={classes.aboutimg}>
-        <img src={hospital} className={classes.productImg1}></img>
-        </Box>
+        
       </Box>
       <Box ref={productss} className={classes.productContainer}>
         <Box >
