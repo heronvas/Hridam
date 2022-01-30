@@ -67,15 +67,14 @@ const useStyles = makeStyles((theme) => ({
   },
   aboutContainer:{
     width: "100%",
-    height: '600px',
+    height: '100%',
     backgroundColor: "#003D57",
     display: "flex",
   },
   aboutus:{
-    marginLeft:"20px",
+    marginLeft:"5%",
     marginTop:"30px",
-    marginRight:"20px",
-    
+    //marginRight:"120%",
     flex: 1
     
 
@@ -93,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
   
   head2:{
     color:"#FFFFFF",
+    marginBottom:"50px"
     
     
   },
@@ -101,7 +101,8 @@ const useStyles = makeStyles((theme) => ({
     //width: "3000px",
     //backgroundRepeat:"no-repeat",
     //height:"100%",
-    flex: 1
+    flex: 1,
+    
   },
   
   footer:{
@@ -151,7 +152,14 @@ const useStyles = makeStyles((theme) => ({
   productImg:{
     width:"91%",
     height:"100%",
-    marginLeft:"9%"
+    marginLeft:"9%",
+    objectFit:"cover"
+  },
+  productImg1:{
+    width:"71%",
+    height:"100%",
+    marginLeft:"29%",
+    objectFit:"cover"
   },
   productDesc:{
     
@@ -337,7 +345,7 @@ which would ultimately facilitate the common man to exercise their human
 fundamental right of "Healthcare for all"</p>
         </Box>
         <Box className={classes.aboutimg}>
-        <img src={hospital} className={classes.productImg}></img>
+        <img src={hospital} className={classes.productImg1}></img>
         </Box>
       </Box>
       <Box ref={productss} className={classes.productContainer}>

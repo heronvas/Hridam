@@ -72,12 +72,13 @@ export default function OutlinedCard(props) {
         </Typography>
 
         <Button style={{
+          width:"80%",
         borderRadius: 10,
         backgroundColor: "#05C0C9",
         //padding: "18px 36px",
         fontSize: "14px",
         marginTop:"20px",
-        marginLeft:"19.5%",
+        marginLeft:"12%",
         color:"#FFFFFF"
     }} variant="contained"  onClick={()=> toast(props.tmsg)}>
           Know More
