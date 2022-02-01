@@ -18,8 +18,9 @@ const useStyles = makeStyles({
     //paddingLeft: "10px",
     
     // boxShadow: "0px 5px"
-    boxShadow: "0 10px 30px -12.125px rgba(0,0,0,0.3)",
-    height:"100%"
+    boxShadow: "0 10px 40px -12.125px rgba(0,0,0,0.3)",
+    height:"100%",
+    borderRadius:"20px"
   },
   bullet: {
     display: "inline-block",
@@ -27,8 +28,10 @@ const useStyles = makeStyles({
     transform: "scale(0.8)"
   },
   title: {
-    fontSize: 20,
-    textAlign:"center"
+    marginTop:"4px",
+    fontSize: "16px",
+    textAlign:"center",
+    fontWeight:"bold"
   },
   pos: {
     marginBottom: 12

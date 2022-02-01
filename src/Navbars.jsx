@@ -20,11 +20,13 @@ import Login from './Login.jsx';
 const useStyle = makeStyles((theme) => ({
   header:{
     background : '#FFFFFF',
-    height:75,
+    height:92,
     boxShadow:"none"
   }, 
   logo:{
-      width: 205,
+      width: 250,
+      height:90
+      
       
       
   },
@@ -81,11 +83,11 @@ export default function Navbars(props) {
 
   const locateAbout = () =>{
     //window.location.replace("/#about")
-    window.scrollTo({behavior: 'smooth', top: props.about.current.offsetTop -70});
+    window.scrollTo({behavior: 'smooth', top: props.about.current.offsetTop -120});
   }
 
   const locateProduct = () =>{
-    window.scrollTo({behavior: 'smooth', top: props.product.current.offsetTop -70});
+    window.scrollTo({behavior: 'smooth', top: props.product.current.offsetTop -120});
   }
 
   const locateTeam = () =>{
@@ -140,17 +142,20 @@ export default function Navbars(props) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={() => locateAbout()}> 
+      <MenuItem onClick={() => locateTeam()}>
         
-        <p>About</p>
+        <p>Vision &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </MenuItem>
+      
       <MenuItem onClick={() => locateProduct()}>
         
         <p>Product</p>
       </MenuItem>
-      <MenuItem onClick={() => locateTeam()}>
+      
+
+      <MenuItem onClick={() => locateAbout()}> 
         
-        <p>Vision &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>Tutorial</p>
       </MenuItem>
 
       <MenuItem onClick={() => locateContact()}>
@@ -177,9 +182,9 @@ export default function Navbars(props) {
         
         <div className={styles.container}>
         <div className={styles.sectionDesktop}>
-        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>About</Button>
-        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateTeam()}>Vision</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
+        <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>Tutorial</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateContact()}>Contact Us</Button>
           
           {/* <Button color="inherit" style={{"color":"#000000"}}>Vision</Button> */}

@@ -5,7 +5,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
 // import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
-import logos from './0011.jpg';
+import logos from './mopic.png';
 //hospital
 import hospital from './stethos1.jpg';
 import hridham from './hridamblack.png';
@@ -14,7 +14,7 @@ import product from './product.png';
 import prodComps from './prodComp.jpg';
 import benifit from './benifit.jpg';
 import phone from './phones.png';
-import visions from './visions5.jpg';
+import visions from './visionsss.jpg';
 import heart from './icons/heart.jpeg';
 import rec from './icons/rec.jpeg';
 import battery from './icons/battery.jpeg';
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ffff",
   },
   photo:{
-    marginTop:"70px",
+    marginTop:"110px",
     paddingLeft:"10%",
     //paddingRight:"60px",
     width: "80%",
@@ -150,16 +150,18 @@ const useStyles = makeStyles((theme) => ({
       
   },
   productImg:{
-    width:"91%",
+    width:"100%",
     height:"100%",
-    marginLeft:"9%",
-    objectFit:"cover"
+    marginLeft:"5%",
+    objectFit:"cover",
+    marginBottom:"40px"
   },
   productImg1:{   //about
     width:"71%",
     height:"100%",
     marginLeft:"29%",
-    objectFit:"cover"
+    objectFit:"cover",
+    
   },
   productDesc:{
     
@@ -186,9 +188,9 @@ const useStyles = makeStyles((theme) => ({
     height:"100%",
   },
   prodCompImg:{
-    width:"50%",
-    height:"50%",
-    marginLeft:"25%",
+    width:"70%",
+    height:"100%",
+    marginLeft:"15%",
     marginTop:"20px",
     marginBottom:"40px"
 
@@ -223,8 +225,8 @@ const useStyles = makeStyles((theme) => ({
   //   marginLeft:"7%",
   },
   visionContainer:{
-    marginTop:"120px",
-    marginBottom:"160px",
+    marginTop:"40px",
+    marginBottom:"60px",
     background: `url(${visions}) no-repeat center fixed`,
       backgroundSize: "cover",
       filter:"blur(0px)",
@@ -290,7 +292,20 @@ const useStyles = makeStyles((theme) => ({
     color:"#FFFFFF",
     listStyleType:"none",
     marginTop:"7%",
-    marginBottom:"20px"
+    marginBottom:"20px",
+    fontSize:"18px"
+  },
+  tutorial:{
+    marginTop:"100px",
+    paddingLeft:"5%"
+    
+  },
+  tutVideo:{
+    borderRadius:"10px",
+
+  },
+  tutContainer:{
+    width:"100%"
   }
 
 
@@ -332,7 +347,7 @@ export default function ButtonAppBar() {
       <Box className={classes.photoContainer}> 
         <img src={logos} alt='' className={classes.photo}/>
       </Box>
-      <Box ref={myRef} className = {classes.aboutContainer}>
+      {/* <Box ref={myRef} className = {classes.aboutContainer}>
       <Box className={classes.aboutimg}>
         <img src={hospital} className="benContainer"></img>
         </Box>
@@ -348,7 +363,18 @@ which would ultimately facilitate the common man to exercise their human
 fundamental right of "Healthcare for all"</p>
         </Box>
         
-      </Box>
+      </Box> */}
+
+<Box ref={visionss} className = {classes.visionContainer}>
+
+<Box className={classes.visionHead}>
+<h1 >Vision</h1>
+
+<p>To become the most respected medical enterprise which delivers high 
+quality and novel "Made in India" products at fair prices to the consumer 
+and thereby creating value for all stakeholders.</p>
+</Box>
+</Box>
       <Box ref={productss} className={classes.productContainer}>
         <Box >
         <Box className={classes.productDesc}>
@@ -476,21 +502,47 @@ fundamental right of "Healthcare for all"</p>
 
       <Box className={classes.prodCompContainer}>
 
-      <h1 className={classes.compareHead}>Why Moscope is better?</h1>
+      <h1 className={classes.compareHead}>Why MoScope is better?</h1>
       <img src={prodComps} className={classes.prodCompImg}></img>
 
     </Box>
 
-    <Box ref={visionss} className = {classes.visionContainer}>
+    <Box ref={myRef} className = {classes.tutorial}>
 
-    <Box className={classes.visionHead}>
-    <h1 >Vision</h1>
+    <Grid
+      container
+      spacing={0}
+      className={classes.tutContainer}
+      justify="center"
+    >
+      <Grid item xs={12} sm={6} md={8}>
+        <Box>
+        <iframe className={classes.tutVideo} width="90%" height="315"
+        src="https://www.youtube.com/embed/WJGI361CdOM">
+        </iframe>
+        </Box>
+      </Grid>
+      
+      <Grid item xs={12} sm={6} md={4}>
+        <Box>
+        <p style={{
+          "fontSize":"40px",
+          "fontWeight":"bold"
+        }}>How it works?</p>
+        <p style={{
+          "fontSize":"25px",
+          paddingRight:"40px",
+          
+        }}>Learn how to use the device by watching this video</p>
+        </Box>
+      </Grid>
+      
+      
+    </Grid>
+    
+    </Box>
 
-<p>To become the most respected medical enterprise which delivers high 
-quality and novel "Made in India" products at fair prices to the consumer 
-and thereby creating value for all stakeholders.</p>
-    </Box>
-    </Box>
+    
     {/* <Grid
     style={{"marginBottom":"90px",}}
       container
@@ -518,7 +570,7 @@ and thereby creating value for all stakeholders.</p>
 
     
 
-      <Box ref={contactss} style={{"paddingLeft":"15%", "paddingRight":"15%"}}>
+      <Box ref={contactss} style={{"paddingLeft":"15%", "paddingRight":"15%", "marginTop":"100px"}}>
         <Contact/>
       </Box>
 
