@@ -481,9 +481,9 @@ and thereby creating value for all stakeholders.</p>
         <Box className={classes.benifitsus}>
             <ul className={classes.benifitHead}>
               <li>Recording can be done even if the battery in the device is completely discharged</li>
-              <li style={{"paddingTop":"30px"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
-              <li style={{"paddingTop":"30px"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
-              <li style={{"paddingTop":"30px"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
+              <li style={{"paddingTop":"10%"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
+              <li style={{"paddingTop":"10%"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
+              <li style={{"paddingTop":"10%"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
             </ul>
         </Box>
         
