@@ -121,8 +121,8 @@ const useStyles = makeStyles((theme) => ({
   footerLogo:{
     marginTop:"20px",
     marginLeft:"20px",
-    width:"70%",
-    height:"130px",
+    width:"85%",
+    height:"140px",
     //objectFit:"cover"
   },
   footerDetails:{
@@ -266,8 +266,8 @@ const useStyles = makeStyles((theme) => ({
   benifitsus:{
     width:"50%",
     height: '100%',
-    marginLeft:"20px",
-    marginTop:"30px",
+    marginLeft:"0",
+    marginTop:"6%",
     marginRight:"20px",
     
     
@@ -291,7 +291,7 @@ const useStyles = makeStyles((theme) => ({
   benifitHead:{
     color:"#FFFFFF",
     listStyleType:"none",
-    marginTop:"7%",
+    marginTop:"0px",
     marginBottom:"20px",
     fontSize:"18px"
   },
@@ -302,6 +302,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tutVideo:{
     borderRadius:"10px",
+    display: "block"
 
   },
   tutContainer:{
@@ -516,22 +517,23 @@ and thereby creating value for all stakeholders.</p>
       justify="center"
     >
       <Grid item xs={12} sm={6} md={8}>
-        <Box>
-        <iframe className={classes.tutVideo} width="90%" height="315"
-        src="https://www.youtube.com/embed/WJGI361CdOM">
+        <iframe type="text/html" className={classes.tutVideo} width="94%" height="315"
+        src="https://www.youtube.com/embed/WJGI361CdOM" frameBorder="0" allowFullScreen>
         </iframe>
-        </Box>
+        
       </Grid>
       
       <Grid item xs={12} sm={6} md={4}>
         <Box>
         <p style={{
           "fontSize":"40px",
-          "fontWeight":"bold"
+          "fontWeight":"bold",
+          "textAlign":"center"
         }}>How it works?</p>
         <p style={{
           "fontSize":"25px",
-          paddingRight:"40px",
+          paddingRight:"30px",
+          "textAlign":"center"
           
         }}>Learn how to use the device by watching this video</p>
         </Box>
@@ -603,8 +605,8 @@ and thereby creating value for all stakeholders.</p>
                         </ul></Box>
                 </Box>
                 <Box className={classes.socialMedia}>
-                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} class="fa fa-facebook-square"></i></a></span>
-                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} class="fa fa-instagram"></i></a></span>
+                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} className="fa fa-facebook-square"></i></a></span>
+                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} className="fa fa-instagram"></i></a></span>
                     
                 </Box>
                 

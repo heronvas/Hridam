@@ -24,7 +24,7 @@ const useStyle = makeStyles((theme) => ({
     boxShadow:"none"
   }, 
   logo:{
-      width: 250,
+      width: 240,
       height:90
       
       
