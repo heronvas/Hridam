@@ -158,7 +158,7 @@ export default function Contact() {
     
     return (
         <Card className={styless.component}>
-            <h2 style={{"textAlign":"center", "marginLeft":"10px", "marginRight":"10px", fontSize:"19px"}}> if you are interested into the product and want to<br/>have more information then please contact us at <br/> <a href="mailto:info@hridamsurgicals.com" style={{textDecoration:"none"}}><span style={{color:"#05C0C9"}}>info@hridamsurgicals.com</span></a> or fill the below form</h2>
+            <h2 style={{"textAlign":"center", "marginLeft":"10px", "marginRight":"10px", fontSize:"19px"}}> if you are interested into the product and want to have more information then please contact us at <a href="mailto:info@hridamsurgicals.com" style={{textDecoration:"none"}}><span style={{color:"#05C0C9"}}>info@hridamsurgicals.com</span></a> or fill the below form</h2>
             <CardContent>
             
              

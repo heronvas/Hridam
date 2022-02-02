@@ -121,20 +121,20 @@ const useStyles = makeStyles((theme) => ({
   },
   footerLogo:{
     marginTop:"20px",
-    marginLeft:"20px",
+    marginLeft:"0px",
     width:"85%",
-    height:"140px",
+    height:"20%",
     //objectFit:"cover"
   },
   footerDetails:{
     listStyleType: "none", 
-   paddingLeft:"25px",
+   paddingLeft:"4%",
    
   },
   footerHalf1:{
     //flex:1,
     fontSize: "18px",
-    marginLeft:"10px"
+    marginLeft:"2%",
     
   },
   footerHalf2:{
@@ -227,7 +227,7 @@ const useStyles = makeStyles((theme) => ({
   //   marginLeft:"7%",
   },
   visionContainer:{
-    marginTop:"40px",
+    marginTop:"20px",
     marginBottom:"60px",
     background: `url(${visions}) no-repeat center fixed`,
       backgroundSize: "cover",
@@ -256,7 +256,7 @@ const useStyles = makeStyles((theme) => ({
     },
     socialMedia:{
       marginTop:"60px",
-      paddingLeft:"40px",
+      marginLeft:"7%",
   },
   benifitsContainer:{
     width: "100%",
@@ -358,7 +358,7 @@ export default function ButtonAppBar() {
           <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth The module comes with a user-friendly mobile application which can seamlessly record store and share heart & lung sounds for achieving precise and timely diagnosis</p>
         </Box>
         <img src={logos1} alt='' style={{
-          marginTop:"60px",
+          marginTop:"45px",
           paddingLeft:"10%",
           //paddingRight:"60px",
           width: "80%",
