@@ -355,7 +355,7 @@ export default function ButtonAppBar() {
           width: "80%",
           textAlign:"center"
         }}>
-          <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth The module comes with a user-friendly mobile application which can seamlessly record store and share heart & lung sounds for achieving precise and timely diagnosis</p>
+          <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth. The module comes with a user-friendly mobile application which can seamlessly record store and share heart & lung sounds for achieving precise and timely diagnosis</p>
         </Box>
         <img src={logos1} alt='' style={{
           marginTop:"45px",
