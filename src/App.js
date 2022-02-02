@@ -5,7 +5,8 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
 // import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
-import logos from './mopic.png';
+import logos from './mopic1.png';
+import logos1 from './mopic2.png';
 //hospital
 import hospital from './stethos1.jpg';
 import hridham from './hridamblack.png';
@@ -154,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
     height:"100%",
     marginLeft:"5%",
     objectFit:"cover",
-    marginBottom:"40px"
+    marginBottom:"0px"
   },
   productImg1:{   //about
     width:"71%",
@@ -347,6 +348,21 @@ export default function ButtonAppBar() {
       <Navbars img={hridhamW} about={myRef} product={productss} vision = {visionss} contactUs={contactss}/>
       <Box className={classes.photoContainer}> 
         <img src={logos} alt='' className={classes.photo}/>
+        <Box style={{
+          paddingLeft:"10%",
+          fontSize:"30px",
+          width: "80%",
+          textAlign:"center"
+        }}>
+          <p>Rethinking new ways for using your stethoscope</p>
+        </Box>
+        <img src={logos1} alt='' style={{
+          marginTop:"60px",
+          paddingLeft:"10%",
+          //paddingRight:"60px",
+          width: "80%",
+          height: "100%",
+        }}/>
       </Box>
       {/* <Box ref={myRef} className = {classes.aboutContainer}>
       <Box className={classes.aboutimg}>
@@ -408,7 +424,15 @@ and thereby creating value for all stakeholders.</p>
       </Box>
 
       
-
+      <Box style={{
+        textAlign:"center",
+        marginLeft:"5%",
+        fontSize: "35px",
+        fontWeight:"bold",
+        marginBottom:"100px"
+      }}>
+          <p>Most affordable stethoscopes compared to what's out there</p>
+        </Box>
       <Box className = {classes.teamContainer}>
     <Grid
       container
