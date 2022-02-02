@@ -500,7 +500,7 @@ and thereby creating value for all stakeholders.</p>
 
     <Box  className = {classes.benifitsContainer}>
     <Box style={{height:"740px"}} className={classes.benifitsimg}>
-        <img src={benifit} style={{height:"750px"}} className="stethimg"></img>
+        <img src={benifit} style={{height:"800px"}} className="stethimg"></img>
         </Box>
         <Box className={classes.benifitsus}>
             <ul className={classes.benifitHead}>
@@ -660,7 +660,6 @@ and thereby creating value for all stakeholders.</p>
 
         
                 {/* <Box className={classes.footerHalf2}>
-
                 <ul className={classes.footerDetails}>
                             
                             <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
@@ -672,8 +671,6 @@ and thereby creating value for all stakeholders.</p>
                                 <a href="mailto:sales@thinkwave.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
                             </li>
                         </ul>
-
-
                 </Box> */}
 
       </Box>
