@@ -259,7 +259,7 @@ const useStyles = makeStyles((theme) => ({
   },
   benifitsContainer:{
     width: "100%",
-    height: '650px',
+    height: '100%',
     backgroundColor: "#003D57",
     display: "flex",
     marginTop:"80px"
@@ -293,7 +293,7 @@ const useStyles = makeStyles((theme) => ({
     color:"#FFFFFF",
     listStyleType:"none",
     marginTop:"0px",
-    marginBottom:"20px",
+    //marginBottom:"20px",
     fontSize:"18px"
   },
   tutorial:{
@@ -354,7 +354,7 @@ export default function ButtonAppBar() {
           width: "80%",
           textAlign:"center"
         }}>
-          <p>Rethinking new ways for using your stethoscope</p>
+          <p>A digital stethoscope that can record share denoise and wirelesly auscultate the patient</p>
         </Box>
         <img src={logos1} alt='' style={{
           marginTop:"60px",
@@ -449,7 +449,7 @@ and thereby creating value for all stakeholders.</p>
       <Grid item xs={12} sm={6} md={3}>
         <ACard imgs={battery} 
         attr={"Long Battery Life"}
-        tmsg={"Fast Charging in 1 Hr 30 mins & Standby Battery Life of 18 Hrs in a Single Charge"}/>
+        tmsg={"Fast Charging in 1 Hr 30 mins & Standby Battery Life of 10 Hrs in a Single Charge"}/>
       </Grid>
       
       <Grid item xs={12} sm={6} md={3}>
@@ -499,8 +499,8 @@ and thereby creating value for all stakeholders.</p>
     </Box>
 
     <Box  className = {classes.benifitsContainer}>
-    <Box className={classes.benifitsimg}>
-        <img src={benifit} className="stethimg"></img>
+    <Box style={{height:"740px"}} className={classes.benifitsimg}>
+        <img src={benifit} style={{height:"750px"}} className="stethimg"></img>
         </Box>
         <Box className={classes.benifitsus}>
             <ul className={classes.benifitHead}>
@@ -508,6 +508,7 @@ and thereby creating value for all stakeholders.</p>
               <li style={{"paddingTop":"10%"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
               <li style={{"paddingTop":"10%"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
               <li style={{"paddingTop":"10%"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
+              <li style={{"paddingTop":"10%"}}>Automatically pairs with bluetooth headset saving all the hassle to connect with the device</li>
             </ul>
         </Box>
         
