@@ -425,7 +425,7 @@ and thereby creating value for all stakeholders.</p>
       </Box>
 
       
-      <Box style={{
+      {/* <Box style={{
         textAlign:"center",
         marginLeft:"5%",
         fontSize: "35px",
@@ -433,7 +433,7 @@ and thereby creating value for all stakeholders.</p>
         marginBottom:"100px"
       }}>
           <p>Most affordable stethoscopes compared to what's out there</p>
-        </Box>
+        </Box> */}
       <Box className = {classes.teamContainer}>
     <Grid
       container
