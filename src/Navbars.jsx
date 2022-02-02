@@ -95,7 +95,7 @@ export default function Navbars(props) {
   }
 
   const locateContact = () =>{
-    window.scrollTo({behavior: 'smooth', top: props.contactUs.current.offsetTop -100});
+    window.scrollTo({behavior: 'smooth', top: props.contactUs.current.offsetTop -120});
   }
 
   const handleProfileMenuOpen = (event) => {

@@ -11,7 +11,7 @@ import logos1 from './mopic2.png';
 import hospital from './stethos1.jpg';
 import hridham from './hridamblack.png';
 import hridhamW from './navicon.jpg';
-import product from './product.png';
+import product from './wayscope.png';
 import prodComps from './prodComp.jpg';
 import benifit from './benifit.jpg';
 import phone from './phones.png';
@@ -155,7 +155,8 @@ const useStyles = makeStyles((theme) => ({
     height:"100%",
     marginLeft:"5%",
     objectFit:"cover",
-    marginBottom:"0px"
+    marginBottom:"70px",
+    marginTop:"70px"
   },
   productImg1:{   //about
     width:"71%",
@@ -259,7 +260,7 @@ const useStyles = makeStyles((theme) => ({
   },
   benifitsContainer:{
     width: "100%",
-    height: '100%',
+    height: '90%',
     backgroundColor: "#003D57",
     display: "flex",
     marginTop:"80px"
@@ -293,7 +294,7 @@ const useStyles = makeStyles((theme) => ({
     color:"#FFFFFF",
     listStyleType:"none",
     marginTop:"0px",
-    //marginBottom:"20px",
+    marginBottom:"20px",
     fontSize:"18px"
   },
   tutorial:{
@@ -350,11 +351,11 @@ export default function ButtonAppBar() {
         <img src={logos} alt='' className={classes.photo}/>
         <Box style={{
           paddingLeft:"10%",
-          fontSize:"30px",
+          fontSize:"22px",
           width: "80%",
           textAlign:"center"
         }}>
-          <p>A digital stethoscope that can record share denoise and wirelesly auscultate the patient</p>
+          <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth. The module comes with a user-friendly mobile application which can seamlessly record, store and share heart & lung sounds for achieving precise and timely diagnosis</p>
         </Box>
         <img src={logos1} alt='' style={{
           marginTop:"60px",
@@ -499,8 +500,8 @@ and thereby creating value for all stakeholders.</p>
     </Box>
 
     <Box  className = {classes.benifitsContainer}>
-    <Box style={{height:"740px"}} className={classes.benifitsimg}>
-        <img src={benifit} style={{height:"800px"}} className="stethimg"></img>
+    <Box style={{height:"630px"}} className={classes.benifitsimg}>
+        <img src={benifit} style={{height:"670px"}} className="stethimg"></img>
         </Box>
         <Box className={classes.benifitsus}>
             <ul className={classes.benifitHead}>
@@ -630,8 +631,8 @@ and thereby creating value for all stakeholders.</p>
                         </ul></Box>
                 </Box>
                 <Box className={classes.socialMedia}>
-                    <span><a href="https://www.facebook.com" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} className="fa fa-facebook-square"></i></a></span>
-                    <span><a href="https://www.instagram.com" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} className="fa fa-instagram"></i></a></span>
+                    <span><a href="https://www.linkedin.com/company/hridam-surgicals" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} className="fa fa-linkedin"></i></a></span>
+                    <span><a href="https://instagram.com/hridamsurgicals?utm_medium=copy_link" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} className="fa fa-instagram"></i></a></span>
                     
                 </Box>
                 
@@ -660,6 +661,7 @@ and thereby creating value for all stakeholders.</p>
 
         
                 {/* <Box className={classes.footerHalf2}>
+
                 <ul className={classes.footerDetails}>
                             
                             <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
@@ -671,6 +673,8 @@ and thereby creating value for all stakeholders.</p>
                                 <a href="mailto:sales@thinkwave.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
                             </li>
                         </ul>
+
+
                 </Box> */}
 
       </Box>
