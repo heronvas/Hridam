@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -54,6 +56,41 @@
   -webkit-clip-path: polygon(100% 0%, 80% 100%, 0% 100%, 0% 0%);
 	clip-path: polygon(100% 0%, 80% 100%, 0% 100%, 0% 0%);
 }
+
+.bg-image {
+  /* The image used */
+  background-image: url("./visionsss.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  -webkit-background-position: center;
+  -webkit-background-repeat: no-repeat;
+  -webkit-background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
 
 @keyframes App-logo-spin {
   from {

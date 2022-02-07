@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   photo:{
     marginTop:"110px",
-    paddingLeft:"10%",
+    marginLeft:"10%",
     //paddingRight:"60px",
     width: "80%",
     height: "100%",
@@ -231,12 +231,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:"60px",
     background: `url(${visions}) no-repeat center fixed`,
       backgroundSize: "cover",
-      filter:"blur(0px)",
-      WebkitFilter:"blur(0px)",
-      boxSizing:"border-box",
-      //backgroundRepeat:"no-repeat",
-      width:"100%",
-      height:"300px"
+      //filter:"blur(0px)",
+      // WebkitFilter:"blur(0px)",
+      // boxSizing:"border-box",
+      // //backgroundRepeat:"no-repeat",
+      // width:"100%",
+      // height:"300px"
       //marginLeft:"5%"
   },
   visionHead:{
@@ -350,7 +350,7 @@ export default function ButtonAppBar() {
       <Box className={classes.photoContainer}> 
         <img src={logos} alt='' className={classes.photo}/>
         <Box style={{
-          paddingLeft:"10%",
+          marginLeft:"10%",
           fontSize:"22px",
           width: "80%",
           textAlign:"center"
@@ -382,17 +382,28 @@ fundamental right of "Healthcare for all"</p>
         </Box>
         
       </Box> */}
+      
 
-<Box ref={visionss} className = {classes.visionContainer}>
-
-<Box className={classes.visionHead}>
+{/* <Box ref={visionss} className = "bg-image">
+{/* //classes.visionContainer classes.visionHead 
+<Box className="bg-text">
 <h1 >Vision</h1>
 
 <p>To become the most respected medical enterprise which delivers high 
 quality and novel "Made in India" products at fair prices to the consumer 
 and thereby creating value for all stakeholders.</p>
 </Box>
-</Box>
+</Box> */}
+<div class={classes.visionContainer}>
+  <div style={{fontSize:"25px", textAlign:"center", padding:"50px", color:"#ffffff", fontWeight:"bold"}}>
+  <h1 >Vision</h1>
+
+<p>To become the most respected medical enterprise which delivers high 
+quality and novel "Made in India" products at fair prices to the consumer 
+and thereby creating value for all stakeholders.</p>
+
+  </div>
+</div>
       <Box ref={productss} className={classes.productContainer}>
         <Box >
         <Box className={classes.productDesc}>
