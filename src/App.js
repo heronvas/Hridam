@@ -232,7 +232,7 @@ const useStyles = makeStyles((theme) => ({
     background: `url(${visions}) no-repeat center fixed`,
       backgroundSize: "cover",
       filter:"blur(0px)",
-      //WebkitFilter:"blur(3px)",
+      WebkitFilter:"blur(0px)",
       boxSizing:"border-box",
       //backgroundRepeat:"no-repeat",
       width:"100%",
@@ -240,7 +240,7 @@ const useStyles = makeStyles((theme) => ({
       //marginLeft:"5%"
   },
   visionHead:{
-    backgroundColor: "rgb(0,0,0)", 
+    //backgroundColor: "rgb(0,0,0)", 
     backgroundColor: "rgba(0,0,0, 0.4)", 
     color: "white",
     fontWeight: "bold",
