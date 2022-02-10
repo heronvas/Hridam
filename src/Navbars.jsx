@@ -6,6 +6,7 @@ import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
+import clsx from 'clsx';
 // import SearchIcon from '@material-ui/icons/Search';
 // import AccountCircle from '@material-ui/icons/AccountCircle';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -13,6 +14,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 // import ShoppingBasketRoundedIcon from '@material-ui/icons/ShoppingBasketRounded';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Login from './Login.jsx';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import ListItem from '@material-ui/core/ListItem';
+import CloseIcon from '@material-ui/icons/Close';
 //import {Link} from 'react-router-dom';
 
 
@@ -55,7 +61,13 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
-  }
+  },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
 }))
 
 //create a function that  
@@ -76,6 +88,64 @@ export default function Navbars(props) {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [state, setState] = React.useState({
+    left: false,
+    
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div
+      className={clsx(styles.list, {
+        [styles.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      //onClick={toggleDrawer(anchor, false)}
+      //onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+      <IconButton
+              aria-label="show more"
+              //aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={toggleDrawer('left', false)}
+              color="inherit"
+              style = {{
+                //marginLeft:"78%"
+                position:"relative",
+                zIndex:"99",
+                float:"right"
+              }}
+            >
+              <CloseIcon style={{"color":"#000000"}}/>
+            </IconButton>
+      </List>
+      <List>
+      <ListItem>
+      <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateTeam()}>Vision</Button>
+      </ListItem>
+      <ListItem>
+      <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
+        
+      </ListItem>
+      <ListItem>
+      <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>Tutorial</Button>
+        
+      </ListItem>
+      <ListItem>
+      <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateContact()}>Contact Us</Button>
+      </ListItem>
+      </List>
+    </div>
+  );
 
   const openDialog = () => {
     setOpen(true)
@@ -195,11 +265,14 @@ export default function Navbars(props) {
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
+              onClick={toggleDrawer('left', true)}
               color="inherit"
             >
-              <MoreIcon style={{"color":"#000000"}}/>
+              <MenuIcon style={{"color":"#000000"}}/>
             </IconButton>
+            <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
+            {list('left')}
+          </Drawer>
           </div>
 
         </ToolBar>

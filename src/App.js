@@ -1,4 +1,4 @@
-import {React, useRef} from 'react';
+import {React, useRef, useEffect, useState} from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 // import AppBar from '@material-ui/core/AppBar';
 // import Toolbar from '@material-ui/core/Toolbar';
@@ -32,6 +32,8 @@ import tandc from './tandc.pdf';
 import usermanual from './usermanual.pdf';
 import { Grid } from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
+import { browserName, browserVersion } from "react-device-detect";
+
 
 
 
@@ -327,371 +329,402 @@ export default function ButtonAppBar() {
   const productss = useRef(null);
   const visionss = useRef(null);
   const contactss = useRef(null);
+  const [open, setOpen] = useState(false);
 
+
+  useEffect(() => {
+    console.log(`hello there ${browserName} ${browserVersion}`);
+
+    if(browserName == "Edge" && browserVersion >= 14){
+        console.log("entered");
+        setOpen(true);
+    }
+    else if(browserName == "Chrome" && browserVersion >= 49){
+      console.log("entered");
+      setOpen(true);
+    }
+  else if(browserName == "Safari" && browserVersion >= 10){
+    console.log("entered");
+    setOpen(true);
+    }
+    else if(browserName == "IE" && browserVersion >= 9){
+      console.log("entered");
+      setOpen(true);
+      }
+      else if(browserName == "Firefox" && browserVersion >= 50){
+        console.log("entered");
+        setOpen(true);
+        }
+
+  }, []);
+  
 
   
   return (
-    <div className="font-link">
-      <div className={classes.root}>
-      {/* <AppBar position="static" className = {classes.appBar}>
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            </IconButton>
-          <Typography variant="h6" className={classes.title}>
-          <img src={hridhamW} className = {classes.navLogo}></img>
-          </Typography>
-          <Button color="inherit" className={classes.navButton}>About</Button>
-          <Button color="inherit" className={classes.navButton}>Team</Button>
-          <Button color="inherit" className={classes.navButton}>Product</Button>
-          <Button color="inherit" className={classes.navButton}>Vision</Button>
-        </Toolbar>
-      </AppBar> */}
-      <Navbars img={hridhamW} about={myRef} product={productss} vision = {visionss} contactUs={contactss}/>
-      <Box className={classes.photoContainer}> 
-        <img src={logos} alt='' className={classes.photo}/>
-        <Box style={{
-          marginLeft:"10%",
-          fontSize:"22px",
-          width: "80%",
-          textAlign:"center"
-        }}>
-          <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth. The module comes with a user-friendly mobile application which can seamlessly record store and share heart & lung sounds for achieving precise and timely diagnosis</p>
+    <div>
+      {
+        (open)?<div className="font-link">
+        <div className={classes.root}>
+        {/* <AppBar position="static" className = {classes.appBar}>
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              </IconButton>
+            <Typography variant="h6" className={classes.title}>
+            <img src={hridhamW} className = {classes.navLogo}></img>
+            </Typography>
+            <Button color="inherit" className={classes.navButton}>About</Button>
+            <Button color="inherit" className={classes.navButton}>Team</Button>
+            <Button color="inherit" className={classes.navButton}>Product</Button>
+            <Button color="inherit" className={classes.navButton}>Vision</Button>
+          </Toolbar>
+        </AppBar> */}
+        <Navbars img={hridhamW} about={myRef} product={productss} vision = {visionss} contactUs={contactss}/>
+        <Box className={classes.photoContainer}> 
+          <img src={logos} alt='' className={classes.photo}/>
+          <Box style={{
+            marginLeft:"10%",
+            fontSize:"22px",
+            width: "80%",
+            textAlign:"center"
+          }}>
+            <p>An indigenous digital stethoscope which enables the healthcare professionals to auscultate wirelessly via bluetooth. The module comes with a user-friendly mobile application which can seamlessly record store and share heart & lung sounds for achieving precise and timely diagnosis</p>
+          </Box>
+          <img src={logos1} alt='' style={{
+            marginTop:"45px",
+            paddingLeft:"10%",
+            //paddingRight:"60px",
+            width: "80%",
+            height: "100%",
+          }}/>
         </Box>
-        <img src={logos1} alt='' style={{
-          marginTop:"45px",
-          paddingLeft:"10%",
-          //paddingRight:"60px",
-          width: "80%",
-          height: "100%",
-        }}/>
-      </Box>
-      {/* <Box ref={myRef} className = {classes.aboutContainer}>
-      <Box className={classes.aboutimg}>
-        <img src={hospital} className="benContainer"></img>
-        </Box>
-        <Box className={classes.aboutus}>
-            <h2  className={classes.head1}>About Us</h2 >
-            <p className={classes.head2}>Hridam surgicals is the product born from the teamwork of four aspiring 
-engineers who have a common goal of serving the society with their 
-innovations. We are currently underway to developing the "World's cheapest" 
-and "Made in India" Digital stethoscope that would enable the healthcare 
-fraternity towards performing timely diagnosis. 
-We wish to explore and innovate many such medical devices in the future 
-which would ultimately facilitate the common man to exercise their human 
-fundamental right of "Healthcare for all"</p>
-        </Box>
-        
-      </Box> */}
-      
-
-{/* <Box ref={visionss} className = "bg-image">
-{/* //classes.visionContainer classes.visionHead 
-<Box className="bg-text">
-<h1 >Vision</h1>
-
-<p>To become the most respected medical enterprise which delivers high 
-quality and novel "Made in India" products at fair prices to the consumer 
-and thereby creating value for all stakeholders.</p>
-</Box>
-</Box> */}
-<div class={classes.visionContainer}>
-  <div style={{fontSize:"25px", textAlign:"center", padding:"50px", color:"#ffffff", fontWeight:"bold"}}>
-  <h1 >Vision</h1>
-
-<p>To become the most respected medical enterprise which delivers high 
-quality and novel "Made in India" products at fair prices to the consumer 
-and thereby creating value for all stakeholders.</p>
-
-  </div>
-</div>
-      <Box ref={productss} className={classes.productContainer}>
-        <Box >
-        <Box className={classes.productDesc}>
-          <p>Change the way of using your stethoscope</p>
-        </Box>
-        <img src={product} className={classes.productImg}></img>
-        </Box>
-        {/* <Box className={classes.productDesc}>
-          <p>Recording can be done even if the battery is completely discharged</p>
-        </Box> */}
-        {/* <Box className={classes.productDesc}>
-          <p>It can record, store and play the recorded heart sounds.</p>
-        </Box> */}
-        
-        {/* <Box
-        className={classes.gridContainer}
-  sx={{
-    display: 'grid',
-    columnGap: 20,
-    rowGap: 20,
-    gridTemplateColumns: 'repeat(2, 1fr)',
-  }}
->
-  <Card/>
-  <Card/>
-  <Card/>
-  <Card/>
-</Box> */}
-        
-      </Box>
-
-      
-      {/* <Box style={{
-        textAlign:"center",
-        marginLeft:"5%",
-        fontSize: "35px",
-        fontWeight:"bold",
-        marginBottom:"100px"
-      }}>
-          <p>Most affordable stethoscopes compared to what's out there</p>
-        </Box> */}
-      <Box className = {classes.teamContainer}>
-    <Grid
-      container
-      spacing={6}
-      className={classes.gridContainer}
-      justify="center"
-    >
-      <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={heart} 
-        attr={"Phonocardiogram"}
-        tmsg={"The app generates a phonocardiogram based on the recorded heart sounds for every file"}/>
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={battery} 
-        attr={"Long Battery Life"}
-        tmsg={"Fast Charging in 1 Hr 30 mins & Standby Battery Life of 10 Hrs in a Single Charge"}/>
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={earphone} 
-        attr={"Bluetooth Auscultation"}
-        tmsg={"This enables to auscultate from a safe distance Any headphones/Air Pods having Bluetooth technology can be connected with the device"}/>
-      </Grid>
-      
-      {/* <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"arun"} desc = {""}/>
-      </Grid> */}
-    </Grid>
-    <Grid
-      container
-      spacing={6}
-      className={classes.gridContainer}
-      justify="center"
-    >
-
-    <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={anc} 
-        attr={"Denoise feature"}
-        tmsg={"It has a Denoise feature which cancels out all the unwanted noise in the recorded audio, therefore providing a clean sound of the heartbeats"}/>
-      </Grid>
-    
-      <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={body} 
-        attr={"Body Chart"}
-        tmsg={"It provides a guided recording of cardiac sounds from 4 locations and lungs sounds from 6 locations"}/>
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={3}>
-        <ACard imgs={rec} 
-        attr={"Record and Share Sounds"}
-        tmsg={"Record sounds with the app and share them with other doctors via Whatsapp/Email etc. for review"}/>
-      </Grid>
-      
-      
-      
-      
-      {/* <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"arun"} desc = {""}/>
-      </Grid> */}
-    </Grid>
-    
-
-    </Box>
-
-    <Box  className = {classes.benifitsContainer}>
-    <Box style={{height:"630px"}} className={classes.benifitsimg}>
-        <img src={benifit} style={{height:"670px"}} className="stethimg"></img>
-        </Box>
-        <Box className={classes.benifitsus}>
-            <ul className={classes.benifitHead}>
-              <li>Recording can be done even if the battery in the device is completely discharged</li>
-              <li style={{"paddingTop":"10%"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
-              <li style={{"paddingTop":"10%"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
-              <li style={{"paddingTop":"10%"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
-              <li style={{"paddingTop":"10%"}}>Automatically pairs with bluetooth headset saving all the hassle to connect with the device</li>
-            </ul>
-        </Box>
-        
-      </Box>
-
-
-    <Box  className={classes.productContainer}>
-        <Box className={classes.productDesc}>
-          <p style={{"fontSize":"35px", "marginTop":"70px"}}>Seamless integration with the app</p>
-        </Box>
-        <Box >
-        <img src={phone} style={{"width":"30%", "height":"30%", "marginLeft":"40%", "marginTop":"0px"}}></img>
-        </Box>
-        
-      </Box>
-
-
-      <Box className={classes.prodCompContainer}>
-
-      <h1 className={classes.compareHead}>Why MoScope is better?</h1>
-      <img src={prodComps} className={classes.prodCompImg}></img>
-
-    </Box>
-
-    <Box ref={myRef} className = {classes.tutorial}>
-
-    <Grid
-      container
-      spacing={0}
-      className={classes.tutContainer}
-      justify="center"
-    >
-      <Grid item xs={12} sm={6} md={8}>
-        <iframe type="text/html" className={classes.tutVideo} width="94%" height="315"
-        src="https://www.youtube.com/embed/WJGI361CdOM" frameBorder="0" allowFullScreen>
-        </iframe>
-        
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={4}>
-        <Box>
-        <p style={{
-          "fontSize":"40px",
-          "fontWeight":"bold",
-          "textAlign":"center"
-        }}>How it works?</p>
-        <p style={{
-          "fontSize":"25px",
-          paddingRight:"30px",
-          "textAlign":"center"
+        {/* <Box ref={myRef} className = {classes.aboutContainer}>
+        <Box className={classes.aboutimg}>
+          <img src={hospital} className="benContainer"></img>
+          </Box>
+          <Box className={classes.aboutus}>
+              <h2  className={classes.head1}>About Us</h2 >
+              <p className={classes.head2}>Hridam surgicals is the product born from the teamwork of four aspiring 
+  engineers who have a common goal of serving the society with their 
+  innovations. We are currently underway to developing the "World's cheapest" 
+  and "Made in India" Digital stethoscope that would enable the healthcare 
+  fraternity towards performing timely diagnosis. 
+  We wish to explore and innovate many such medical devices in the future 
+  which would ultimately facilitate the common man to exercise their human 
+  fundamental right of "Healthcare for all"</p>
+          </Box>
           
-        }}>Learn how to use the device by watching this video</p>
-        </Box>
-      </Grid>
-      
-      
-    </Grid>
-    
-    </Box>
-
-    
-    {/* <Grid
-    style={{"marginBottom":"90px",}}
-      container
-      spacing={4}
-      className={classes.gridContainer}
-      justify="center"
-    >
-      <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"Mohmad Ahmed"} desc = {"an electronic engineering graduate has an avid zeal in designing and developing circuits, and is currently working at Capgemini as a Senior analyst. He is the mastermind of this enterprise and is handling the Product Development and Server related configurations at Hridam Surgicals"} links = {"https://www.linkedin.com/in/mohd-ahmed78581099"}/>
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"Rahil Dhami"} desc = {"an engineer with a degree in production engineering is currently the Executive Director at Rajkamal Barscans Pvt. Ltd. He have previously worked on different projects and even handled the powertrain department of a formula Student racing team. He has been looking after the Product Design and Legal certifications at Hridam Surgicals"} links = {"https://www.linkedin.com/in/rahil-dhami-5ba127121/"}/>
-      </Grid>
-      
-      <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"Heron Vas"} desc = {"an engineering student in Information Technology has a significant liking and experience in Mobile Application Development. He is currently responsible for Designing, Developing and Maintaining an self-made mobile application for products at Hridam Surgicals"} links={"https://www.linkedin.com/in/heron-vas-0769681a9/"}/>
-      </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-        <Card name = {"Kedar Kishor Vaze"} desc = {"a graduate in Production Engineering has a keen interest in the field of Sales & Marketing, Brand Development and Supply Chain Management. He has been the Chief Financial Officer and Marketing head at a Formula Student racing team which competes on a national level. With 8 months of work experience in the field of Operations n Logistics in a FMCG company, he has also executed multiple project based solutions for Medium and Small Scale enterprises. Currently, Kedar is handling the Sales, Marketing and Brand development for Hridam Surgicals."} links = {"https://www.linkedin.com/in/kedar-vaze-672927143/"}/>
-      </Grid>
-      
-    </Grid> */}
-
-
-    
-
-      <Box ref={contactss} style={{"paddingLeft":"15%", "paddingRight":"15%", "marginTop":"100px"}}>
-        <Contact/>
-      </Box>
-
-
-      <Box className={classes.footer}>
-
-      <Grid
-      
-      container
-      spacing={8}
-      className={classes.footergridContainer}
-      justify="center"
-    >
-      <Grid item xs={12} sm={6} md={7}>
-      <Box className={classes.footerHalf1}>
-          <img src={hridham} className = {classes.footerLogo}></img>
-          <Box className={classes.footerHalf1}><ul className={classes.footerDetails}>
-                            {/* <li style={{"color": "#FFFFFF"}}>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>&nbsp;&nbsp;P.O. Box 2418, Sebastopol, CA 95473</span>
-                            </li> */}
-                            <li style={{"color": "#FFFFFF", "paddingTop":"15px"}}>
-                                <i class="fa fa-phone-square" aria-hidden="true"></i>
-                                <a href="tel:+917045867822" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;+91 70458 67822</a>
-                            </li>
-                            <li style={{"color": "#FFFFFF", "paddingTop":"15px"}}>
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <a href="mailto:info@hridamsurgicals.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;info@hridamsurgicals.com</a>
-                            </li>
-                        </ul></Box>
-                </Box>
-                <Box className={classes.socialMedia}>
-                    <span><a href="https://www.linkedin.com/company/hridam-surgicals" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} className="fa fa-linkedin"></i></a></span>
-                    <span><a href="https://instagram.com/hridamsurgicals?utm_medium=copy_link" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} className="fa fa-instagram"></i></a></span>
-                    
-                </Box>
-                
-      </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-      <Box className={classes.footerHalf2}>
-
-                <ul className={classes.footerDetails}>
-                            
-                            <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
-                                
-                                <a href={tandc} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
-                            </li>
-                            <li style={{"color": "#FFFFFF", "paddingTop":"30px"}}>
-                                
-                                <a href={usermanual} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
-                            </li>
-                        </ul>
-
-
-                </Box>
-      </Grid>
-      
-    </Grid>
-    
-
+        </Box> */}
         
-                {/* <Box className={classes.footerHalf2}>
-
-                <ul className={classes.footerDetails}>
-                            
-                            <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
-                                
-                                <a href="tel:18663399283" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
-                            </li>
-                            <li style={{"color": "#FFFFFF", "paddingTop":"30px"}}>
-                                
-                                <a href="mailto:sales@thinkwave.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
-                            </li>
-                        </ul>
-
-
-                </Box> */}
-
-      </Box>
-      
-      
+  
+  {/* <Box ref={visionss} className = "bg-image">
+  {/* //classes.visionContainer classes.visionHead 
+  <Box className="bg-text">
+  <h1 >Vision</h1>
+  
+  <p>To become the most respected medical enterprise which delivers high 
+  quality and novel "Made in India" products at fair prices to the consumer 
+  and thereby creating value for all stakeholders.</p>
+  </Box>
+  </Box> */}
+  <div ref={visionss} class={classes.visionContainer}>
+    <div style={{fontSize:"25px", textAlign:"center", padding:"50px", color:"#ffffff", fontWeight:"bold"}}>
+    <h1 >Vision</h1>
+  
+  <p>To become the most respected medical enterprise which delivers high 
+  quality and novel "Made in India" products at fair prices to the consumer 
+  and thereby creating value for all stakeholders.</p>
+  
     </div>
+  </div>
+        <Box ref={productss} className={classes.productContainer}>
+          <Box >
+          <Box className={classes.productDesc}>
+            <p>Change the way of using your stethoscope</p>
+          </Box>
+          <img src={product} className={classes.productImg}></img>
+          </Box>
+          {/* <Box className={classes.productDesc}>
+            <p>Recording can be done even if the battery is completely discharged</p>
+          </Box> */}
+          {/* <Box className={classes.productDesc}>
+            <p>It can record, store and play the recorded heart sounds.</p>
+          </Box> */}
+          
+          {/* <Box
+          className={classes.gridContainer}
+    sx={{
+      display: 'grid',
+      columnGap: 20,
+      rowGap: 20,
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    }}
+  >
+    <Card/>
+    <Card/>
+    <Card/>
+    <Card/>
+  </Box> */}
+          
+        </Box>
+  
+        
+        {/* <Box style={{
+          textAlign:"center",
+          marginLeft:"5%",
+          fontSize: "35px",
+          fontWeight:"bold",
+          marginBottom:"100px"
+        }}>
+            <p>Most affordable stethoscopes compared to what's out there</p>
+          </Box> */}
+        <Box className = {classes.teamContainer}>
+      <Grid
+        container
+        spacing={6}
+        className={classes.gridContainer}
+        justify="center"
+      >
+        <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={heart} 
+          attr={"Phonocardiogram"}
+          tmsg={"The app generates a phonocardiogram based on the recorded heart sounds for every file"}/>
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={battery} 
+          attr={"Long Battery Life"}
+          tmsg={"Fast Charging in 1 Hr 30 mins & Standby Battery Life of 10 Hrs in a Single Charge"}/>
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={earphone} 
+          attr={"Bluetooth Auscultation"}
+          tmsg={"This enables to auscultate from a safe distance Any headphones/Air Pods having Bluetooth technology can be connected with the device"}/>
+        </Grid>
+        
+        {/* <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"arun"} desc = {""}/>
+        </Grid> */}
+      </Grid>
+      <Grid
+        container
+        spacing={6}
+        className={classes.gridContainer}
+        justify="center"
+      >
+  
+      <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={anc} 
+          attr={"Denoise feature"}
+          tmsg={"It has a Denoise feature which cancels out all the unwanted noise in the recorded audio, therefore providing a clean sound of the heartbeats"}/>
+        </Grid>
+      
+        <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={body} 
+          attr={"Body Chart"}
+          tmsg={"It provides a guided recording of cardiac sounds from 4 locations and lungs sounds from 6 locations"}/>
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={3}>
+          <ACard imgs={rec} 
+          attr={"Record and Share Sounds"}
+          tmsg={"Record sounds with the app and share them with other doctors via Whatsapp/Email etc. for review"}/>
+        </Grid>
+        
+        
+        
+        
+        {/* <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"arun"} desc = {""}/>
+        </Grid> */}
+      </Grid>
+      
+  
+      </Box>
+  
+      <Box  className = {classes.benifitsContainer}>
+      <Box style={{height:"630px"}} className={classes.benifitsimg}>
+          <img src={benifit} style={{height:"670px"}} className="stethimg"></img>
+          </Box>
+          <Box className={classes.benifitsus}>
+              <ul className={classes.benifitHead}>
+                <li>Recording can be done even if the battery in the device is completely discharged</li>
+                <li style={{"paddingTop":"10%"}}>Comfortable moving the chestpiece as there is no stethoscope tubing present</li>
+                <li style={{"paddingTop":"10%"}}>Sounds can be heard comfortably with any preferred Bluetooth Device</li>
+                <li style={{"paddingTop":"10%"}}>Guided recording of cardiac sounds from 4 locations and lung sounds from 6 locations</li>
+                <li style={{"paddingTop":"10%"}}>Automatically pairs with bluetooth headset saving all the hassle to connect with the device</li>
+              </ul>
+          </Box>
+          
+        </Box>
+  
+  
+      <Box  className={classes.productContainer}>
+          <Box className={classes.productDesc}>
+            <p style={{"fontSize":"35px", "marginTop":"70px"}}>Seamless integration with the app</p>
+          </Box>
+          <Box >
+          <img src={phone} style={{"width":"30%", "height":"30%", "marginLeft":"40%", "marginTop":"0px"}}></img>
+          </Box>
+          
+        </Box>
+  
+  
+        <Box className={classes.prodCompContainer}>
+  
+        <h1 className={classes.compareHead}>Why MoScope is better?</h1>
+        <img src={prodComps} className={classes.prodCompImg}></img>
+  
+      </Box>
+  
+      <Box ref={myRef} className = {classes.tutorial}>
+  
+      <Grid
+        container
+        spacing={0}
+        className={classes.tutContainer}
+        justify="center"
+      >
+        <Grid item xs={12} sm={6} md={8}>
+          <iframe type="text/html" className={classes.tutVideo} width="94%" height="315"
+          src="https://www.youtube.com/embed/WJGI361CdOM" frameBorder="0" allowFullScreen>
+          </iframe>
+          
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={4}>
+          <Box>
+          <p style={{
+            "fontSize":"40px",
+            "fontWeight":"bold",
+            "textAlign":"center"
+          }}>How it works?</p>
+          <p style={{
+            "fontSize":"25px",
+            paddingRight:"30px",
+            "textAlign":"center"
+            
+          }}>Learn how to use the device by watching this video</p>
+          </Box>
+        </Grid>
+        
+        
+      </Grid>
+      
+      </Box>
+  
+      
+      {/* <Grid
+      style={{"marginBottom":"90px",}}
+        container
+        spacing={4}
+        className={classes.gridContainer}
+        justify="center"
+      >
+        <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"Mohmad Ahmed"} desc = {"an electronic engineering graduate has an avid zeal in designing and developing circuits, and is currently working at Capgemini as a Senior analyst. He is the mastermind of this enterprise and is handling the Product Development and Server related configurations at Hridam Surgicals"} links = {"https://www.linkedin.com/in/mohd-ahmed78581099"}/>
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"Rahil Dhami"} desc = {"an engineer with a degree in production engineering is currently the Executive Director at Rajkamal Barscans Pvt. Ltd. He have previously worked on different projects and even handled the powertrain department of a formula Student racing team. He has been looking after the Product Design and Legal certifications at Hridam Surgicals"} links = {"https://www.linkedin.com/in/rahil-dhami-5ba127121/"}/>
+        </Grid>
+        
+        <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"Heron Vas"} desc = {"an engineering student in Information Technology has a significant liking and experience in Mobile Application Development. He is currently responsible for Designing, Developing and Maintaining an self-made mobile application for products at Hridam Surgicals"} links={"https://www.linkedin.com/in/heron-vas-0769681a9/"}/>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card name = {"Kedar Kishor Vaze"} desc = {"a graduate in Production Engineering has a keen interest in the field of Sales & Marketing, Brand Development and Supply Chain Management. He has been the Chief Financial Officer and Marketing head at a Formula Student racing team which competes on a national level. With 8 months of work experience in the field of Operations n Logistics in a FMCG company, he has also executed multiple project based solutions for Medium and Small Scale enterprises. Currently, Kedar is handling the Sales, Marketing and Brand development for Hridam Surgicals."} links = {"https://www.linkedin.com/in/kedar-vaze-672927143/"}/>
+        </Grid>
+        
+      </Grid> */}
+  
+  
+      
+  
+        <Box ref={contactss} style={{"paddingLeft":"15%", "paddingRight":"15%", "marginTop":"100px"}}>
+          <Contact/>
+        </Box>
+  
+  
+        <Box className={classes.footer}>
+  
+        <Grid
+        
+        container
+        spacing={8}
+        className={classes.footergridContainer}
+        justify="center"
+      >
+        <Grid item xs={12} sm={6} md={7}>
+        <Box className={classes.footerHalf1}>
+            <img src={hridham} className = {classes.footerLogo}></img>
+            <Box className={classes.footerHalf1}><ul className={classes.footerDetails}>
+                              {/* <li style={{"color": "#FFFFFF"}}>
+                                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                  <span>&nbsp;&nbsp;P.O. Box 2418, Sebastopol, CA 95473</span>
+                              </li> */}
+                              <li style={{"color": "#FFFFFF", "paddingTop":"15px"}}>
+                                  <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                  <a href="tel:+917045867822" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;+91 70458 67822</a>
+                              </li>
+                              <li style={{"color": "#FFFFFF", "paddingTop":"15px"}}>
+                                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                                  <a href="mailto:info@hridamsurgicals.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;info@hridamsurgicals.com</a>
+                              </li>
+                          </ul></Box>
+                  </Box>
+                  <Box className={classes.socialMedia}>
+                      <span><a href="https://www.linkedin.com/company/hridam-surgicals" style={{"textDecoration": "none", "color":"#FFFFFF", }}><i style={{"fontSize":"50px"}} className="fa fa-linkedin"></i></a></span>
+                      <span><a href="https://instagram.com/hridamsurgicals?utm_medium=copy_link" style={{"textDecoration": "none", "color":"#FFFFFF", "marginLeft":"40px"}}><i style={{"fontSize":"50px"}} className="fa fa-instagram"></i></a></span>
+                      
+                  </Box>
+                  
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+        <Box className={classes.footerHalf2}>
+  
+                  <ul className={classes.footerDetails}>
+                              
+                              <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
+                                  
+                                  <a href={tandc} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
+                              </li>
+                              <li style={{"color": "#FFFFFF", "paddingTop":"30px"}}>
+                                  
+                                  <a href={usermanual} style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
+                              </li>
+                          </ul>
+  
+  
+                  </Box>
+        </Grid>
+        
+      </Grid>
+      
+  
+          
+                  {/* <Box className={classes.footerHalf2}>
+  
+                  <ul className={classes.footerDetails}>
+                              
+                              <li style={{"color": "#FFFFFF", "paddingTop":"7px"}}>
+                                  
+                                  <a href="tel:18663399283" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;Terms & Condition</a>
+                              </li>
+                              <li style={{"color": "#FFFFFF", "paddingTop":"30px"}}>
+                                  
+                                  <a href="mailto:sales@thinkwave.com" style={{"textDecoration": "none", "color":"#FFFFFF"}}>&nbsp;&nbsp;User Manual</a>
+                              </li>
+                          </ul>
+  
+  
+                  </Box> */}
+  
+        </Box>
+        
+      </div>
+      </div>:<p style={{"fontSize":"40px", "textAlign":"center", "marginTop":"30%"}}>Use Chrome 80 and above, Safari 10 and above, Edge 14 and above, IE 9 and above</p>
+      }
     </div>
   );
 }
