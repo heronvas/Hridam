@@ -329,7 +329,7 @@ export default function ButtonAppBar() {
   const productss = useRef(null);
   const visionss = useRef(null);
   const contactss = useRef(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
 
   useEffect(() => {
@@ -355,6 +355,14 @@ export default function ButtonAppBar() {
         console.log("entered");
         setOpen(true);
         }
+        else if(browserName == "Opera" && browserVersion >= 50){
+          console.log("entered");
+          setOpen(true);
+          }
+          else{
+            setOpen(false);
+          }
+        
 
   }, []);
   
