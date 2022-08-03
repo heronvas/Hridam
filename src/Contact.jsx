@@ -113,6 +113,7 @@ export default function Contact() {
 
         console.log(templateParams);
         emailjs.init('user_p7msf2tHORufB8CgTktTI');
+        
 
     emailjs.sendForm('service_v03jozo', 'template_bmevv1f', e.target, 'user_p7msf2tHORufB8CgTktTI')
       .then((result) => {

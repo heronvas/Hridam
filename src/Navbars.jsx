@@ -19,6 +19,13 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
 import CloseIcon from '@material-ui/icons/Close';
+import PersonIcon from '@material-ui/icons/Person';
+import {logout, useAuth } from "./firebase";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 //import {Link} from 'react-router-dom';
 
 
@@ -80,6 +87,7 @@ const ToolBar = withStyles({
 
 export default function Navbars(props) {
     const styles = useStyle();
+    const currentUser = useAuth();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -140,8 +148,33 @@ export default function Navbars(props) {
       <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>Tutorial</Button>
         
       </ListItem>
+      
       <ListItem>
       <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateContact()}>Contact Us</Button>
+      </ListItem>
+      <ListItem>
+      <Button color="inherit" style={{"color":"#FFFFFF", backgroundColor:"#003D57", borderRadius:"10px", marginLeft:"10px"}} onClick={() => locateBuy()}>Buy Now</Button>
+        
+      </ListItem>
+      <ListItem>
+      <div>
+          {
+            (!currentUser?.email)?<Button
+            color="inherit" style={{"color":"#000000", marginLeft:"9px",marginBottom:"8px", fontSize:"15px"}}
+            onClick={() => openDialog()}
+          >
+            <PersonIcon style={{"color":"#000000"}}/>&nbsp;Login
+          </Button>:<Button
+              color="inherit" style={{"color":"#000000", marginLeft:"9px",marginBottom:"8px", fontSize:"15px"}}
+              onClick={() => {
+                toast.success('Logged out sucessfully', {autoClose:3000});
+                logout()
+              }}
+            >
+              <ExitToAppIcon style={{"color":"#000000"}}/>&nbsp;Logout
+            </Button>
+          }
+        </div>
       </ListItem>
       </List>
     </div>
@@ -166,6 +199,10 @@ export default function Navbars(props) {
 
   const locateContact = () =>{
     window.scrollTo({behavior: 'smooth', top: props.contactUs.current.offsetTop -120});
+  }
+
+  const locateBuy = () =>{
+    window.scrollTo({behavior: 'smooth', top: props.buys.current.offsetTop -120});
   }
 
   const handleProfileMenuOpen = (event) => {
@@ -228,6 +265,7 @@ export default function Navbars(props) {
         <p>Tutorial</p>
       </MenuItem>
 
+      
       <MenuItem onClick={() => locateContact()}>
         
         <p>Contact Us &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -256,6 +294,25 @@ export default function Navbars(props) {
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateProduct()}>Product</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateAbout()}>Tutorial</Button>
         <Button color="inherit" style={{"color":"#000000"}} onClick={() => locateContact()}>Contact Us</Button>
+        {/* <Button color="inherit" style={{"color":"#FFFFFF", backgroundColor:"#003D57", borderRadius:"14px", marginLeft:"10px", marginTop:"3px", width:"140px", height:"45px"}} onClick={() => locateBuy()}>Buy Now</Button> */}
+        {/* <div>
+          {
+            (!currentUser?.email)?<IconButton
+            color="inherit" style={{"color":"#000000", marginLeft:"9px",marginBottom:"8px",}}
+            onClick={() => openDialog()}
+          >
+            <PersonIcon style={{"color":"#000000"}}/>
+          </IconButton>:<IconButton
+              color="inherit" style={{"color":"#000000", marginLeft:"9px",marginBottom:"8px",}}
+              onClick={() => {
+                toast.success('Logged out sucessfully', {autoClose:3000});
+                logout()
+              }}
+            >
+              <ExitToAppIcon style={{"color":"#000000"}}/>
+            </IconButton>
+          }
+        </div> */}
           
           {/* <Button color="inherit" style={{"color":"#000000"}}>Vision</Button> */}
           </div>
